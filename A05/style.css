@@ -7,18 +7,66 @@
 
 body, html {
   height: 100%;
-  scroll-behavior: smooth;
+  margin: 0;
+  overflow-y: auto; 
+  margin-bottom: 0; 
+}
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.7); 
+  padding: 15px 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.logo {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: white;
+  margin: 0;
+  text-decoration: none;
 }
 
 .hero {
   position: relative;
-  height: 100vh;
+  height: 100vh; 
   overflow: hidden;
   color: white;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: center;
+  align-items: center;
   padding: 20px;
+  text-align: center;
+}
+
+.hero-content {
+  z-index: 2;
+  max-width: 80%;
+  background-color: rgba(0, 0, 0, 0.4);
+  border-radius: 10px;
+  padding: 30px;
+}
+
+.hero-content h2 {
+  font-size: 2rem;
+  letter-spacing: 2px;
+  margin-bottom: 15px;
+}
+
+.hero-content h1 {
+  font-size: 4rem;
+  margin-bottom: 25px;
+}
+
+.hero-content p {
+  font-size: 1.3rem;
+  line-height: 1.6;
+  margin-bottom: 30px;
 }
 
 .slideshow {
@@ -40,87 +88,15 @@ body, html {
   100%  { background-image: url('amsterdam night.jpg'); }
 }
 
-.hero::before {
-  position: absolute;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
-  background: rgba(0, 0, 0, 0.45);
-  z-index: 1;
-}
-
-.navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  padding: 20px;
-  background-color: rgba(0, 0, 0, 0.6);
-  z-index: 3;
-}
-
-.logo {
-  font-size: 1.8rem;
-  font-weight: bold;
-  color: white;
-}
-
-.nav-links {
-  list-style: none;
-  display: flex;
-  gap: 20px;
-}
-
-.nav-links li a {
-  text-decoration: none;
-  color: white;
-  font-weight: 500;
-  transition: color 0.3s ease;
-}
-
-.nav-links li a:hover {
-  color: #e2e2e2;
-}
-
-.hero-content {
-  text-align: left;
-  max-width: 600px;
-  z-index: 2;
-  position: relative;
-  margin: 120px 20px;
-  background-color: rgba(0, 0, 0, 0.2); 
-  padding: 20px; 
-  border-radius: 25px; 
-}
-
-.hero-content h2 {
-  font-size: 1.5rem;
-  letter-spacing: 2px;
-  margin-bottom: 10px;
-}
-
-.hero-content h1 {
-  font-size: 3.5rem;
-  margin-bottom: 20px;
-}
-
-.hero-content p {
-  font-size: 1.2rem;
-  margin-bottom: 25px;
-}
-
-.btn,
-.secondary-btn {
+.btn, .secondary-btn {
   display: inline-block;
-  padding: 12px 30px; 
+  padding: 15px 35px;
   font-weight: bold;
-  border-radius: 25px;
+  border-radius: 30px;
   text-decoration: none;
-  font-size: 1rem; 
-  line-height: 1; 
+  font-size: 1.1rem;
   transition: background-color 0.3s ease, color 0.3s ease;
+  margin: 5px;
 }
 
 .btn {
@@ -136,180 +112,63 @@ body, html {
   background-color: transparent;
   color: white;
   border: 2px solid white;
-  margin-top: 15px;
 }
 
 .secondary-btn:hover {
   background-color: rgba(255, 255, 255, 0.2);
-  color: white;
 }
 
-@media (max-width: 1200px) {
+.footer {
+  position: fixed; 
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.7); 
+  color: white;
+  padding: 15px 20px;
+  text-align: center;
+  z-index: 10; 
+}
+
+@media (max-width: 768px) {
   .hero-content {
-      max-width: 500px;
-      margin-top: 100px;
+      max-width: 95%;
+      padding: 20px;
   }
 
   .hero-content h1 {
       font-size: 3rem;
   }
 
-  .hero-content p {
-      font-size: 1.1rem;
-  }
-}
-
-@media (max-width: 992px) {
-  .navbar {
-      padding: 15px 30px;
-  }
-
-  .logo {
-      font-size: 1.6rem;
-  }
-
-  .nav-links {
-      gap: 15px;
-  }
-
-  .nav-links li a {
-      font-size: 0.9rem;
-  }
-
-  .hero-content {
-      max-width: 400px;
-      margin-top: 80px;
-  }
-
-  .hero-content h1 {
-      font-size: 2.5rem;
-  }
-
-  .hero-content p {
-      font-size: 1rem;
-  }
-
-  .btn,
-  .secondary-btn {
-      padding: 10px 25px;
-      font-size: 1rem;
-  }
-}
-
-@media (max-width: 768px) {
-  .hero {
-      padding: 15px;
-      justify-content: center;
-      text-align: center;
-  }
-
-  .navbar {
-      flex-direction: column;
-      align-items: center;
-      padding: 15px;
-  }
-
-  .logo {
-      font-size: 1.5rem;
-      margin-bottom: 10px;
-  }
-
-  .nav-links {
-      flex-direction: column;
-      gap: 10px;
-      width: 100%;
-      text-align: center;
-  }
-
-  .nav-links li {
-      width: 100%;
-  }
-
-  .hero-content {
-      margin-top: 60px;
-      text-align: center;
-      max-width: 90%;
-      margin-left: auto;
-      margin-right: auto;
-      background-color: rgba(0, 0, 0, 0.5); 
-      padding: 15px; 
-      border-radius: 5px; 
-  }
-
   .hero-content h2 {
-      font-size: 1.2rem;
-      margin-bottom: 8px;
-  }
-
-  .hero-content h1 {
-      font-size: 2.2rem;
-      margin-bottom: 15px;
-  }
-
-  .hero-content p {
-      font-size: 1rem;
-      margin-bottom: 20px;
-  }
-
-  .btn,
-  .secondary-btn {
-      padding: 10px 25px;
-      font-size: 1rem;
-  }
-
-  .secondary-btn {
-      margin-top: 10px;
-  }
-}
-
-@media (max-width: 576px) {
-  .logo {
-      font-size: 1.3rem;
-  }
-
-  .nav-links li a {
-      font-size: 0.9rem;
-  }
-
-  .hero-content h1 {
-      font-size: 2rem;
-  }
-
-  .hero-content p {
-      font-size: 0.9rem;
-  }
-
-  .btn,
-  .secondary-btn {
-      padding: 8px 20px;
-      font-size: 0.9rem;
-  }
-
-  .hero-content {
-      padding: 10px; 
-  }
-}
-
-@media (max-width: 400px) {
-  .logo {
-      font-size: 1.1rem;
-  }
-
-  .hero-content h1 {
       font-size: 1.8rem;
   }
 
   .hero-content p {
-      font-size: 0.85rem;
+      font-size: 1.2rem;
   }
 
-  .btn,
-  .secondary-btn {
-      padding: 8px 20px;
+  .btn, .secondary-btn {
+      padding: 12px 30px;
+      font-size: 1rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .hero-content h1 {
+      font-size: 2.5rem;
+  }
+
+  .hero-content h2 {
+      font-size: 1.5rem;
+  }
+
+  .hero-content p {
+      font-size: 1rem;
+  }
+
+  .btn, .secondary-btn {
+      padding: 10px 25px;
       font-size: 0.9rem;
-  }
-
-  .hero-content {
-      padding: 8px; 
   }
 }
