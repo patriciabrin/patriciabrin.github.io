@@ -1,1 +1,539 @@
- 
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NCT</title>
+    <link rel="icon" href="../W03.logo.png" type="icon"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+    <script>tailwind.config = { theme: { extend: { colors: { primary: '#3b82f6', secondary: '#10b981' }, borderRadius: { 'none': '0px', 'sm': '4px', DEFAULT: '8px', 'md': '12px', 'lg': '16px', 'xl': '20px', '2xl': '24px', '3xl': '32px', 'full': '9999px', 'button': '8px' } } } }</script>
+    <style>
+        :where([class^="ri-"])::before {
+            content: "\f3c2";
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: #333;
+            background-color: #fafafa;
+            min-height: 100vh;
+        }
+
+        .gallery-item {
+            transition: all 0.3s ease;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.02);
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.7);
+            opacity: 0;
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 1.5rem;
+            color: white;
+        }
+
+        .gallery-item:hover .gallery-overlay {
+            opacity: 1;
+        }
+
+        .gallery-details {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease;
+        }
+
+        .gallery-details.expanded {
+            max-height: 500px;
+        }
+
+        .hero-section {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('https://pbs.twimg.com/media/FslNjMYaEAADsG8.jpg:large');
+            background-size: cover;
+            background-position: center;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="bg-[#478978] shadow-sm py-4">
+        <div class="container mx-auto px-4 flex justify-between items-center">
+            <a href="#" class="text-4xl font-['Impact']" style="color:white;">nct</a>
+
+
+            <div class="hidden md:flex space-x-8">
+                <a href="../BRIN_WD03/index.html" class="text-[#fafafa] hover:text-[#7cff01] transition-colors">Back to
+                    Portfolio</a>
+                <a href="#Meet the Members" class="text-[#fafafa] hover:text-[#7cff01] transition-colors">Members</a>
+                <a href="#About" class="text-[#fafafa] hover:text-[#7cff01] transition-colors">About</a>
+                <a href="#Follow" class="text-[#fafafa] hover:text-[#7cff01] transition-colors">Follow</a>
+            </div>
+
+
+            <div class="md:hidden">
+                <button
+                    class="text-gray-700 hover:text-primary transition-colors w-10 h-10 flex items-center justify-center">
+                    <i class="ri-menu-line ri-lg"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+
+    <section class="hero-section py-20 md:py-32">
+        <div class="container mx-auto px-4 text-center">
+            <h1 class="text-4xl md:text-6xl font-bold mb-6">To the World, here is NCT!</h1>
+            <p class="text-xl md:text-2xl mb-10 max-w-3xl mx-auto">With members from different backgrounds and units
+                that constantly evolve, NCT creates music that transcends borders and inspires fans everywhere.
+                Welcome to their world of limitless energy and creativity.</p>
+        </div>
+    </section>
+
+    <section id="About" class="py-16 bg-[#0f0f0f]">
+        <div class="container mx-auto px-4">
+            <div class="max-w-3xl mx-auto">
+                <h2 class="text-3xl font-bold mb-6 text-center" style="color: #478978;">About NCT</h2>
+                <div class="mb-6">
+                    <p class="text-gray-700 mb-4" style="color: #e5e3dd;"><b>NCT</b> (엔시티), an acronym for ‘<b>N</b>eo
+                        <b>C</b>ulture
+                        <b>T</b>echnology’, is a 25 member boy group under SM Entertainment.
+                        Introduced in January 2016, the group consists of 25 members divided into six different
+                        sub-units: <b>NCT U</b>, <b>NCT 127</b>,
+                        <b>NCT Dream</b>, <b>WayV</b>, <b>NCT DoJaeJung</b>, and <b>NCT Wish</b>. They are known for
+                        their versatility in music, vocal and rap abilities, and powerful
+                        performances, and have been cited as K-pop's "most experimental boy band" due to their concept
+                        of having limitless members. As of June 2024, NCT has recorded more than 45 million album sales
+                        in Korea across all
+                        sub-units, making them the best-selling K-pop artist of all time.
+                    </p>
+                    <div id="moreContent" class="gallery-details">
+                        <p class="text-gray-700 mb-4" style="color: #e5e3dd;">They are described as having an unlimited
+                            number of members and
+                            sub-units until late 2023 where it was announced
+                            that NCT Wish would be the last sub-unit of NCT,
+                            and no more members would be joining.</p>
+                        <p class="text-gray-700 mb-4" style="color: #e5e3dd;">The group consists of members
+                            <b>Taeyong</b>, <b>Johnny</b>,
+                            <b>Yuta</b>, <b>Kun</b>,
+                            <b>Doyoung</b>, <b>Ten</b>, <b>Jaehyun</b>, <b>Winwin</b>, <b>Jungwoo</b>, <b>Mark</b>,
+                            <b>Xiaojun</b>, <b>Hendery</b>,
+                            <b>Renjun</b>, <b>Jeno</b>, <b>Haechan</b>, <b>Jaemin</b>, <b>Yangyang</b>, <b>Chenle</b>,
+                            <b>Jisung</b>, <b>Sion</b>, <b>Riku</b>, <b>Yushi</b>, <b>Jaehee</b>, <b>Ryo</b> and
+                            <b>Sakuya</b>.
+                        </p>
+                        <p class="text-gray-700 mb-4" style="color: #e5e3dd;">On May 10, 2023, SM Entertainment
+                            announced that <b>Lucas</b> had left
+                            the group and his sub-units
+                            but is still under SM. On May 24, 2023, SM Entertainment announced that <b>Shotaro</b> and
+                            <b>Sungchan</b>
+                            will be leaving NCT and their sub-units and debut in SM’s new boy group <b>RIIZE</b>.
+                        </p>
+                    </div>
+                </div>
+                <div class="text-center">
+                    <button id="readMoreBtn" onclick="toggleReadMore()"
+                        class="text-[#00ab41] hover:text-[#00ab41]-700 font-medium flex items-center mx-auto transition-colors whitespace-nowrap !rounded-button">
+                        <span id="readMoreText">Read More</span>
+                        <span class="w-5 h-5 flex items-center justify-center ml-1">
+                            <i id="readMoreIcon" class="ri-arrow-down-s-line"></i>
+                        </span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <section id="Meet the Members" class="py-16 bg-[#0f0f0f]">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold mb-10 text-center" style="color: #478978;">Members</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8" id="galleryContainer">
+            </div>
+        </div>
+    </section>
+
+
+    <section id="Follow">
+        <footer class="bg-900 text-white py-12" style="background-color: #478978;">
+            <div class="container mx-auto px-4">
+                <div class="text-center">
+                    <h3 class="text-xl font-bold mb-4">Learn More</h3>
+                    <div class="flex justify-center space-x-4 mb-4">
+                        <a href="https://www.facebook.com/share/1CATASE5Cu/"
+                            class="text-white-400 hover:text-[#7cff01] transition-colors w-10 h-10 flex items-center justify-center">
+                            <i class="ri-facebook-fill ri-lg"></i></a>
+                        <a href="https://x.com/nctsmtown"
+                            class="text-white-400 hover:text-[#7cff01] transition-colors w-10 h-10 flex items-center justify-center">
+                            <i class="ri-twitter-fill ri-lg"></i></a>
+                        <a href="https://www.instagram.com/nct?igsh=MWd6M2MxejE3YnE4Yw=="
+                            class="text-white-400 hover:text-[#7cff01] transition-colors w-10 h-10 flex items-center justify-center">
+                            <i class="ri-instagram-fill ri-lg"></i></a>
+                        <a href="https://open.spotify.com/artist/48eO052eSDcn8aTxiv6QaG?si=PY0gKyvlTTO4sReTPKLM8Q"
+                            class="text-white-400 hover:text-[#7cff01] transition-colors w-10 h-10 flex items-center justify-center">
+                            <i class="ri-spotify-fill ri-lg"></i></a>
+                        <a href="https://www.youtube.com/@nctsmtown" class="text-white-400 hover:text-[#7cff01] transition-colors w-10 h-10 flex items-center justify-center">
+                            <i class="ri-youtube-fill ri-lg"></i></a>
+                        <a href="https://www.tiktok.com/@official_nct" class="text-white-400 hover:text-[#7cff01] transition-colors w-10 h-10 flex items-center justify-center">
+                            <i class="ri-tiktok-fill ri-lg"></i></a>
+                    </div>
+                </div>
+                <div class="border-t border-gray-800 mt-8 pt-8 text-center text-white-400">
+                    <p>&copy; 2025 Patricia Brin. All rights reserved.</p>
+                </div>
+            </div>
+        </footer>
+
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+        <script>
+    
+    
+            function toggleReadMore() {
+                const moreContent = document.getElementById('moreContent');
+                const readMoreText = document.getElementById('readMoreText');
+                const readMoreIcon = document.getElementById('readMoreIcon');
+    
+    
+                moreContent.classList.toggle('expanded');
+    
+    
+                if (moreContent.classList.contains('expanded')) {
+                    readMoreText.textContent = 'Read Less';
+                    readMoreIcon.classList.remove('ri-arrow-down-s-line');
+                    readMoreIcon.classList.add('ri-arrow-up-s-line');
+                } else {
+                    readMoreText.textContent = 'Read More';
+                    readMoreIcon.classList.remove('ri-arrow-up-s-line');
+                    readMoreIcon.classList.add('ri-arrow-down-s-line');
+                }
+            }
+            const galleryItems = [
+                {
+                    id: 1,
+                    Name: "Taeyong (태용)",
+                    BirthName: "Lee Tae Yong (이태용)",
+                    Position: "<b>Leader</b>, <b>Leader of NCT 127</b>, Rapper, Dancer, Vocalist, Center, Face of the Group, Visual",
+                    Birthday: "July 1, 1995",
+                    SubUnit: "<b>NCT U</b>, <b>NCT 127</b>",
+                    imageUrl: "https://www.k-popmag.com/content/images/size/w1000/2023/02/74F22787-4280-428E-A703-2D68E59B4288.jpeg"
+                },
+                {
+                    id: 2,
+                    Name: "Johnny (쟈니)",
+                    BirthName: "Seo Young Ho (서영호)",
+                    Position: "Dancer, Rapper, Vocalist",
+                    Birthday: "February 9, 1995",
+                    SubUnit: "<b>NCT 127</b>, <b>NCT U</b>",
+                    imageUrl: "https://staticg.sportskeeda.com/editor/2023/02/6c6f8-16753516430685-1920.jpg"
+                },
+                {
+                    id: 3,
+                    Name: "Yuta (유타)",
+                    BirthName: "Nakamoto Yuta (中本悠太)",
+                    Position: "Dancer, Vocalist, Rapper",
+                    Birthday: "October 26, 1995",
+                    SubUnit: "<b>NCT 127</b>, <b>NCT U</b>",
+                    imageUrl: "https://www.k-popmag.com/content/images/size/w1000/2023/02/E86D221F-A760-43A4-B546-AD56DD81186B.jpeg"
+                },
+                {
+                    id: 4,
+                    Name: "Kun (쿤)",
+                    BirthName: "Qian Kun (錢錕)",
+                    Position: "<b>Leader of WayV</b>, Vocalist, Rapper",
+                    Birthday: "January 1, 1996",
+                    SubUnit: "<b>NCT U</b>, <b>WayV</b>",
+                    imageUrl: "https://i.pinimg.com/736x/5a/78/97/5a7897af0ccfd5cb5a2ceded1d9e5c0a.jpg"
+                },
+                {
+                    id: 5,
+                    Name: "Doyoung (도영)",
+                    BirthName: "Kim Dong Young (김동영)",
+                    Position: "Vocalist",
+                    Birthday: "February 1, 1996",
+                    SubUnit: "<b>NCT U</b>, <b>NCT 127</b>",
+                    imageUrl: "https://i.pinimg.com/1200x/38/cd/4d/38cd4d670ae1d3fe261f17d6599ec4eb.jpg"
+                },
+                {
+                    id: 6,
+                    Name: "Ten (텐)",
+                    BirthName: "Chittaphon Leechaiyapornkul (ชิตพล ลี้ชัยพรกุล)",
+                    Position: "Dancer, Rapper, Vocalist",
+                    Birthday: "February 27, 1996",
+                    SubUnit: "<b>NCT U</b>, <b>WayV</b>",
+                    imageUrl: "https://i.pinimg.com/736x/bb/a6/20/bba620556c7c30b4f0a37819ec524ad8.jpg"
+                },
+                {
+                    id: 7,
+                    Name: "Jaehyun (재현)",
+                    BirthName: "Jeong Yoon Oh (정윤오)",
+                    Position: "Vocalist, Dancer, Rapper, Visual",
+                    Birthday: "February 14, 1997",
+                    SubUnit: "<b>NCT U</b>, <b>NCT 127</b>",
+                    imageUrl: "https://i.pinimg.com/736x/19/80/d2/1980d2a3e4d4d58b152ad40465a3d9b7.jpg"
+                },
+                {
+                    id: 8,
+                    Name: "Winwin (윈윈)",
+                    BirthName: "Dong Si Cheng (董思成)",
+                    Position: "Dancer, Vocalist, Rapper, Visual",
+                    Birthday: "October 28, 1997",
+                    SubUnit: "<b>NCT U</b>, <b>NCT 127</b>, <b>WayV</b>",
+                    imageUrl: "https://i.pinimg.com/1200x/2d/2f/ee/2d2fee72c9827c752095e067da1bf5f8.jpg"
+                },
+                {
+                    id: 9,
+                    Name: "Jungwoo (정우)",
+                    BirthName: "Kim Jung Woo (김정우)",
+                    Position: "Vocalist, Dancer",
+                    Birthday: " February 19, 1998",
+                    SubUnit: "<b>NCT U</b>, <b>NCT 127</b>",
+                    imageUrl: "https://i.pinimg.com/1200x/38/30/82/383082ed61b6bb661e517df651b5171f.jpg"
+                },
+                {
+                    id: 10,
+                    Name: "Mark (마크)",
+                    BirthName: "Mark Lee",
+                    Position: "<b>Leader of NCT Dream</b>, Rapper, Dancer, Vocalist",
+                    Birthday: "August 2, 1999",
+                    SubUnit: "<b>NCT U</b>, <b>NCT 127</b>, <b>NCT Dream</b>",
+                    imageUrl: "https://i.pinimg.com/736x/95/85/56/958556bf5f0fa57f226b0c13d4c5ffa0.jpg"
+                },
+                {
+                    id: 11,
+                    Name: "Xiaojun (샤오쥔)",
+                    BirthName: "Xiao Dejun (肖德俊)",
+                    Position: "Vocalist",
+                    Birthday: "August 8, 1999",
+                    SubUnit: "<b>WayV</b>, <b>NCT U</b>",
+                    imageUrl: "https://i.pinimg.com/1200x/c6/b5/0d/c6b50dbc0d7df2e9b7f3be3b46f2018c.jpg"
+                },
+                {
+                    id: 12,
+                    Name: "Hendery (헨드리)",
+                    BirthName: "Wong Kunhang (黃冠亨)",
+                    Position: "Dancer, Rapper, Vocalist, Visual",
+                    Birthday: "September 28, 1999",
+                    SubUnit: "<b>WayV</b>, <b>NCT U</b>",
+                    imageUrl: "https://i.pinimg.com/736x/5c/4a/c5/5c4ac54b36294eab38a434c675aeb5dd.jpg"
+                },
+                {
+                    id: 13,
+                    Name: "Renjun (런쥔)",
+                    BirthName: "Huang Ren Jun (黄仁俊)",
+                    Position: "Vocalist, Dancer",
+                    Birthday: "March 23, 2000",
+                    SubUnit: "<b>NCT Dream</b>, <b>NCT U</b>",
+                    imageUrl: "https://i.pinimg.com/1200x/19/31/e0/1931e076296da38c2ea6a1f19eac6ac1.jpg"
+                },
+                {
+                    id: 14,
+                    Name: "Jeno (제노)",
+                    BirthName: "Lee Je No (이제노)",
+                    Position: "Dancer, Rapper, Vocalist, Visual ",
+                    Birthday: "April 23, 2000",
+                    SubUnit: "<b>NCT Dream</b>, <b>NCT U</b>",
+                    imageUrl: "https://i.pinimg.com/736x/53/28/31/5328310e8471fffccb21eeda4f5e55d4.jpg"
+                },
+                {
+                    id: 15,
+                    Name: " Haechan (해찬)",
+                    BirthName: "Lee Dong Hyuck (이동혁)",
+                    Position: "Vocalist, Dancer",
+                    Birthday: "June 6, 2000",
+                    SubUnit: "<b>NCT 127</b>, <b>NCT Dream</b>, <b>NCT U</b>",
+                    imageUrl: "https://i.pinimg.com/736x/b1/59/88/b159888569374f720b2b0c2627e55d79.jpg"
+                },
+                {
+                    id: 16,
+                    Name: "Jaemin (재민)",
+                    BirthName: "Na Jae Min (나재민)",
+                    Position: "Rapper, Dancer, Vocalist, Visual",
+                    Birthday: "August 13, 2000",
+                    SubUnit: "<b>NCT Dream</b>, <b>NCT U</b>",
+                    imageUrl: "https://i.pinimg.com/736x/2e/c3/a2/2ec3a23e1e19f840aaeddf56e04887e4.jpg"
+                },
+                {
+                    id: 17,
+                    Name: "Yangyang (양양)",
+                    BirthName: "Liu YangYang (劉揚揚)",
+                    Position: "Rapper, Dancer, Vocalist",
+                    Birthday: "October 10, 2000",
+                    SubUnit: "<b>WayV</b>, <b>NCT U</b>",
+                    imageUrl: "https://i.pinimg.com/736x/b6/73/21/b6732117bcf8cb34dc1af48b1df416f2.jpg"
+                },
+                {
+                    id: 18,
+                    Name: "Chenle (천러)",
+                    BirthName: "Zhong Chen Le (钟辰乐 / 鍾辰樂)",
+                    Position: "Vocalist ",
+                    Birthday: "November 22, 2001",
+                    SubUnit: "<b>NCT Dream</b>, <b>NCT U</b>",
+                    imageUrl: "https://i.pinimg.com/736x/8b/33/1b/8b331b4818bbe5c9ba066d7b7fea2b64.jpg"
+                },
+                {
+                    id: 19,
+                    Name: "Jisung (지성)",
+                    BirthName: "Park Ji Sung (박지성)",
+                    Position: "Dancer, Vocalist, Rapper",
+                    Birthday: "February 5, 2002",
+                    SubUnit: "<b>NCT Dream</b>, <b>NCT U</b>",
+                    imageUrl: "https://i.pinimg.com/736x/d9/4e/33/d94e33af97d96d3cc74e928518aea714.jpg"
+                },
+                {
+                    id: 20,
+                    Name: "Sion (시온)",
+                    BirthName: "Oh Si On (오시온)",
+                    Position: "<b>Leader of NCT Wish</b>, Dancer, Vocalist, Rapper",
+                    Birthday: "May 11, 2002",
+                    SubUnit: "<b>NCT Wish</b>",
+                    imageUrl: "https://i.pinimg.com/736x/bc/98/db/bc98dbfaeeeda80a3a5ee9959977e4e1.jpg"
+                },
+                {
+                    id: 21,
+                    Name: "Riku (리쿠)",
+                    BirthName: "Maeda Riku (リク)",
+                    Position: "Vocalist",
+                    Birthday: "June 28, 2003",
+                    SubUnit: "<b>NCT Wish</b>",
+                    imageUrl: "https://i.pinimg.com/1200x/8d/8a/f8/8d8af85fb9b55e9ddf04005a5c177cd9.jpg"
+                },
+                {
+                    id: 22,
+                    Name: "Yushi (유우시)",
+                    BirthName: "Tokuno Yūshi (ユウシ)",
+                    Position: "Dancer, Vocalist",
+                    Birthday: "April 5, 2004",
+                    SubUnit: "<b>NCT Wish</b>",
+                    imageUrl: "https://i.pinimg.com/1200x/89/ff/b0/89ffb0d26a60cd24f85ac6551e229b51.jpg"
+                },
+                {
+                    id: 23,
+                    Name: "Jaehee (재희)",
+                    BirthName: "Kim Daeyoung (김대영)",
+                    Position: "Vocalist",
+                    Birthday: "June 21, 2005",
+                    SubUnit: "<b>NCT Wish</b>",
+                    imageUrl: "https://i.pinimg.com/736x/6e/b3/fe/6eb3fede6b70d1b16031ea92ff3c243e.jpg"
+                },
+                {
+                    id: 24,
+                    Name: "Ryo (료)",
+                    BirthName: "Hirose Ryo (リョウ)",
+                    Position: "Dancer, Vocalist",
+                    Birthday: "August 4, 2007",
+                    SubUnit: "<b>NCT Wish</b>",
+                    imageUrl: "https://i.pinimg.com/736x/1d/02/26/1d02269f9bd55c3a8df5621ba8788882.jpg"
+                },
+                {
+                    id: 25,
+                    Name: "Sakuya (사쿠야)",
+                    BirthName: "Fujinaga Sakuya (サクヤ)",
+                    Position: "Dancer, Vocalist, Rapper. Maknae",
+                    Birthday: "November 18, 2007",
+                    SubUnit: "<b>NCT Wish</b>",
+                    imageUrl: "https://i.pinimg.com/736x/97/6b/51/976b51a39ab664498288a9c973bd3895.jpg"
+                },
+            ];
+    
+            document.addEventListener('DOMContentLoaded', function () {
+            const galleryContainer = document.getElementById('galleryContainer');
+
+
+            galleryItems.forEach(item => {
+                const galleryItem = document.createElement('div');
+                galleryItem.className = 'gallery-item rounded shadow-md bg-white overflow-hidden';
+
+
+                galleryItem.innerHTML = `
+                    <div class="relative">
+                        <img src="${item.imageUrl}" alt="${item.Name}" class="w-full h-64 object-cover object-top">
+                        <div class="gallery-overlay">
+                            <h3 class="text-xl font-bold mb-2">${item.Name}</h3>    
+                            <p class="mb-4">${item.BirthName}</p>
+                            <button onclick="toggleDetails(${item.id})" class="bg-white text-[#00ab41] hover:bg-gray-100 px-4 py-2 rounded-button font-medium transition-colors whitespace-nowrap">
+                                View Details
+                            </button>
+                        </div>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="text-xl font-bold mb-2">${item.Name}</h3>
+                        <p class="text-gray-700 mb-4">${item.BirthName}</p>
+                        <div id="details-${item.id}" class="gallery-details">
+                            <div class="pt-4 border-t border-gray-200 mt-4">
+                                <p class="text-gray-700"><span class="font-medium">Position:</span> ${item.Position}</p>
+                                <p class="text-gray-700"><span class="font-medium">Birthday:</span> ${item.Birthday}</p>
+                                <p class="text-gray-700"><span class="font-medium">Sub-Unit:</span> ${item.SubUnit}</p>
+                                <p class="text-gray-700 mt-3">Each of these faces represents a unique and talented member of NCT,
+                                    a group known for its extraordinary diversity and boundless potential. While each member brings their own personality, skills,
+                                    and style to the group, together they form a powerhouse that transcends boundaries and constantly evolves.
+                                    From their passion for music to their unbreakable bond as a team.</p>
+                            </div>
+                        </div>
+                        <button onclick="toggleDetails(${item.id})" class="text-[#00ab41] hover:text-[#00ab41]-700 font-medium mt-2 flex items-center transition-colors whitespace-nowrap !rounded-button">
+                            <span id="detailsText-${item.id}">Show Details</span>
+                            <span class="w-5 h-5 flex items-center justify-center ml-1">
+                                <i id="detailsIcon-${item.id}" class="ri-arrow-down-s-line"></i>
+                            </span>
+                        </button>
+                    </div>
+                `;
+
+
+                galleryContainer.appendChild(galleryItem);
+
+
+                galleryItem.addEventListener('mouseover', function () {
+
+
+                });
+            });
+        });
+
+
+
+
+        function toggleDetails(id) {
+            const details = document.getElementById(`details-${id}`);
+            const detailsText = document.getElementById(`detailsText-${id}`);
+            const detailsIcon = document.getElementById(`detailsIcon-${id}`);
+
+
+            details.classList.toggle('expanded');
+
+
+            if (details.classList.contains('expanded')) {
+                detailsText.textContent = 'Hide Details';
+                detailsIcon.classList.remove('ri-arrow-down-s-line');
+                detailsIcon.classList.add('ri-arrow-up-s-line');
+            } else {
+                detailsText.textContent = 'Show Details';
+                detailsIcon.classList.remove('ri-arrow-up-s-line');
+                detailsIcon.classList.add('ri-arrow-down-s-line');
+            }
+        }
+    </script>
+</body>
+
+
+</html>
