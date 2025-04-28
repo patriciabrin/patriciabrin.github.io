@@ -76,11 +76,10 @@
 </head>
 
 <body>
-    <nav class="bg-[#478978] shadow-sm py-4">
+     <nav class="bg-[#478978] shadow-sm py-4">
         <div class="container mx-auto px-4 flex justify-between items-center">
             <a href="#" class="text-4xl font-['Impact']" style="color:white;">nct</a>
-
-
+    
             <div class="hidden md:flex space-x-8">
                 <a href="../index.html" class="text-[#fafafa] hover:text-[#7cff01] transition-colors">Back to
                     Portfolio</a>
@@ -88,17 +87,32 @@
                 <a href="#About" class="text-[#fafafa] hover:text-[#7cff01] transition-colors">About</a>
                 <a href="#Follow" class="text-[#fafafa] hover:text-[#7cff01] transition-colors">Follow</a>
             </div>
-
-
+    
             <div class="md:hidden">
-                <button
-                    class="text-gray-700 hover:text-primary transition-colors w-10 h-10 flex items-center justify-center">
+                <button class="navbar-toggler text-gray-700 hover:text-primary transition-colors w-10 h-10 flex items-center justify-center"
+                        type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavMobile"
+                        aria-controls="navbarNavMobile" aria-expanded="false" aria-label="Toggle navigation">
                     <i class="ri-menu-line ri-lg"></i>
                 </button>
+                <div class="collapse navbar-collapse" id="navbarNavMobile">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a href="../index.html" class="nav-link text-[#fafafa] hover:text-[#7cff01] transition-colors">Back to Portfolio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#Meet the Members" class="nav-link text-[#fafafa] hover:text-[#7cff01] transition-colors">Members</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#About" class="nav-link text-[#fafafa] hover:text-[#7cff01] transition-colors">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#Follow" class="nav-link text-[#fafafa] hover:text-[#7cff01] transition-colors">Follow</a>
+                        </li>
+                    </ul>
+                </div>
             </div>
         </div>
     </nav>
-
 
     <section class="hero-section py-20 md:py-32">
         <div class="container mx-auto px-4 text-center">
