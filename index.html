@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Studio Ghibli Films</title>
+  <link rel="icon" href="../A04/W03.logo.png" type="icon" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet" />
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Roboto', sans-serif;
+      background: #9cbdc9;
+    }
+
+    .navbar {
+      background-color: #78a1b1;
+      font-family: 'Playfair Display', serif;
+    }
+
+    .navbar-brand,
+    .navbar-nav .nav-link {
+      color: white !important;
+    }
+
+    .navbar-nav .nav-link:hover {
+      color: #d2e9f4 !important;
+    }
+
+    .cover-photo-container {
+      position: relative;
+      width: 100%;
+      height: 600px;
+      background: url('https://media.giphy.com/media/l1KVaDmsxFkSfSOSA/giphy.gif?cid=ecf05e47q6m8qhk19n2psftpe854aajg0ij4qu9ndcv1aspz&ep=v1_gifs_related&rid=giphy.gif&ct=g') no-repeat center center;
+      background-size: cover;
+      margin-bottom: 3rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      text-align: center;
+      padding: 2rem;
+    }
+
+    .cover-photo-container h2 {
+      color: white;
+      font-family: 'Playfair Display', serif;
+      font-size: 3.5em;
+      margin: 0;
+    }
+
+    .about-text {
+      color: white;
+      font-size: 1.1em;
+      margin-top: 1rem;
+      max-width: 800px;
+    }
+
+    .read-more-content {
+      display: none;
+      margin-top: 1rem;
+    }
+
+    .film-gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 1.5rem;
+      padding: 2rem;
+    }
+
+    .film-card {
+      background: white;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+      transition: transform 0.2s;
+    }
+
+    .film-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .film-card img {
+      width: 100%;
+      height: auto;
+    }
+
+    .card-content {
+      padding: 15px;
+    }
+
+    .card-title {
+      font-size: 1.4em;
+      font-weight: bold;
+      margin-bottom: 8px;
+      color: #0799c4;
+    }
+
+    .card-description {
+      font-size: 0.9em;
+      color: #454c57;
+      margin-bottom: 10px;
+    }
+
+    footer {
+      background: #78a1b1;
+      color: white;
+      text-align: center;
+      padding: 1rem;
+    }
+
+    .read-more-btn {
+      background: none;
+      border: none;
+      color: #4eb3d1;
+      text-decoration: underline;
+      font-size: 1.1em;
+      cursor: pointer;
+    }
+
+    .btn:focus,
+    .btn:active {
+      box-shadow: none !important;
+      outline: none !important;
+    }
+
+    @media (max-width: 768px) {
+      .cover-photo-container {
+        height: auto;
+        padding: 2rem 1rem;
+      }
+
+      .cover-photo-container h2 {
+        font-size: 2.2em;
+      }
+
+      .about-text {
+        font-size: 1em;
+      }
+
+      .film-gallery {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        padding: 1rem;
+        gap: 1rem;
+      }
+
+      .card-title {
+        font-size: 1.2em;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark">
+    <div class="container">
+      <a class="navbar-brand fs-3" href="#">Studio Ghibli Films</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item"><a class="nav-link" href="#About">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="#film-gallery">Films</a></li>
+          <li class="nav-item"><a class="nav-link" href="../index.html">Back to Profile</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="cover-photo-container" id="About">
+    <h2>Explore the Magical World of Studio Ghibli</h2>
+    <p class="about-text">
+      Studio Ghibli is a world-renowned animation studio known for its stunning visuals, imaginative storytelling,
+      and emotional depth.
+    </p>
+    <div class="read-more-content" id="moreAbout">
+      <p class="about-text">
+        Founded in 1985 by <b>Hayao Miyazaki</b>, <b>Isao Takahata</b>, and <b>Toshio Suzuki</b>.
+        Known for its visually stunning hand-drawn animation and rich narratives, Ghibli has
+        produced some of the most beloved and critically acclaimed animated films, including <i>Princess Mononoke</i>
+        (1997), <i>Spirited
+          Away</i> (2001), <i>My Neighbor Totoro</i> (1988), <i>Ponyo</i> (2008) and <i>Howl's Moving Castle (2004)</i>.
+        Their films often explore
+        themes of nature, friendship, and courage.
+      </p>
+    </div>
+    <button class="read-more-btn" onclick="toggleReadMore()">Read More</button>
+  </div>
+
+  <main class="container my-5">
+    <div class="film-gallery" id="film-gallery"></div>
+  </main>
+
+  <footer>
+    &copy; 2025 Patricia Brin. All rights reserved.
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    fetch("https://ghibliapi.vercel.app/films")
+      .then(response => response.json())
+      .then(films => {
+        const gallery = document.getElementById("film-gallery");
+        films.forEach(film => {
+          const card = document.createElement("div");
+          card.classList.add("film-card");
+          card.innerHTML = `
+              <img src="${film.image}" alt="${film.title}" />
+              <div class="card-content">
+                <div class="card-title">${film.title}</div>
+                <div class="card-description">${film.description}</div>
+                <div><strong style="color:#0799c4;">Director:</strong> <span style="color:#454c57">${film.director}</span></div>
+                <div><strong style="color:#0799c4;">Release Year:</strong> <span style="color:#454c57">${film.release_date}</span></div>
+              </div>`;
+          gallery.appendChild(card);
+        });
+      })
+      .catch(error => {
+        console.error('Error fetching the Studio Ghibli films:', error);
+      });
+
+    function toggleReadMore() {
+      const moreText = document.getElementById("moreAbout");
+      const btn = event.target;
+      if (moreText.style.display === "none" || moreText.style.display === "") {
+        moreText.style.display = "block";
+        btn.textContent = "Read Less";
+      } else {
+        moreText.style.display = "none";
+        btn.textContent = "Read More";
+      }
+    }
+  </script>
+</body>
+
+</html>
