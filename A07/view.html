@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Film Details</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet" />
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+      background: #9cbdc9;
+      margin: 0;
+    }
+  
+    .navbar {
+      background-color: #78a1b1;
+      font-family: 'Playfair Display', serif;
+    }
+  
+    .navbar-brand,
+    .navbar-nav .nav-link {
+      color: white !important; 
+    }
+  
+    .navbar-nav .nav-link:hover {
+      color: #d2e9f4 !important;
+    }
+  
+    .film-details-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin: 2rem auto;
+      padding: 2rem;
+      max-width: 1200px;
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    }
+  
+    .film-details-left {
+    flex: 1;
+    padding-right: 2rem; 
+    text-align: left; 
+  }
+
+  .film-details-right {
+    flex: 1;
+    text-align: right; 
+  }
+  
+    .film-details-right img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 10px;
+    }
+  
+    .film-title {
+      font-size: 2.5em;
+      font-weight: bold;
+      margin-bottom: 1rem;
+      color: #0799c4;
+    }
+  
+    .film-description {
+      font-size: 1.1em;
+      color: #454c57;
+      margin-bottom: 1.5rem;
+    }
+  
+    .film-info {
+      font-size: 1.1em;
+      color: #454c57;
+    }
+  
+    .film-info b {
+      color: #0799c4;
+    }
+  
+    footer {
+      background: #78a1b1;
+      color: white;
+      text-align: center;
+      padding: 1rem;
+      width: 100%;
+      box-sizing: border-box;
+    }
+  </style>
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #78a1b1;">
+    <div class="container">
+      <a class="navbar-brand fs-3" href="#">Studio Ghibli Films</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item"><a class="nav-link" href="index.html">Back to Gallery</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <main class="container">
+    <div id="film-details" class="film-details-container">
+
+    </div>
+  </main>
+
+  <footer>
+    &copy; 2025 Patricia Brin. All rights reserved.
+  </footer>
+
+  <script>
+    const urlParams = new URLSearchParams(window.location.search);
+    const filmTitle = decodeURIComponent(urlParams.get('film'));
+
+
+    fetch("https://ghibliapi.vercel.app/films")
+      .then(response => response.json())
+      .then(films => {
+        const film = films.find(f => f.title === filmTitle);
+
+        if (film) {
+          const filmDetailsContainer = document.getElementById('film-details');
+
+
+          const filmDetailsHTML = `
+            <div class="film-details-left">
+              <div class="film-title">${film.title}</div>
+              <div class="film-description">${film.description}</div>
+              <div class="film-info">
+                <div><b>Director:</b> ${film.director}</div>
+                <div><b>Release Year:</b> ${film.release_date}</div>
+              </div>
+            </div>
+            <div class="film-details-right">
+              <img src="${film.image}" alt="${film.title}" />
+            </div>
+          `;
+
+          filmDetailsContainer.innerHTML = filmDetailsHTML;
+        } else {
+          filmDetailsContainer.innerHTML = "<p>Film not found.</p>";
+        }
+      })
+      .catch(error => {
+        console.error('Error fetching the film details:', error);
+      });
+  </script>
+</body>
+
+</html>
