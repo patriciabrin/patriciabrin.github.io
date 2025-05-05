@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NCT</title>
-    <link rel="icon" href="../A04/W03.logo.png" type="icon">
+    <link rel="icon" href="../W03.logo.png" type="icon"/>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
@@ -76,9 +76,10 @@
 </head>
 
 <body>
-    <nav class="bg-[#478978] shadow-sm py-4 fixed top-0 left-0 w-full z-50 md:hidden">
+    <nav class="bg-[#478978] shadow-sm py-4">
         <div class="container mx-auto px-4 flex justify-between items-center">
             <a href="#" class="text-4xl font-['Impact']" style="color:white;">nct</a>
+
 
             <div class="hidden md:flex space-x-8">
                 <a href="../index.html" class="text-[#fafafa] hover:text-[#7cff01] transition-colors">Back to
@@ -88,37 +89,16 @@
                 <a href="#Follow" class="text-[#fafafa] hover:text-[#7cff01] transition-colors">Follow</a>
             </div>
 
+
             <div class="md:hidden">
                 <button
-                    class="navbar-toggler text-gray-700 hover:text-primary transition-colors w-10 h-10 flex items-center justify-center"
-                    type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavMobile"
-                    aria-controls="navbarNavMobile" aria-expanded="false" aria-label="Toggle navigation">
+                    class="text-gray-700 hover:text-primary transition-colors w-10 h-10 flex items-center justify-center">
                     <i class="ri-menu-line ri-lg"></i>
                 </button>
-                <div class="collapse navbar-collapse" id="navbarNavMobile">
-                    <ul class="navbar-nav">
-                        <li class="nav-item">
-                            <a href="../index.html"
-                                class="nav-link text-[#fafafa] hover:text-[#7cff01] transition-colors">Back to
-                                Portfolio</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="#Meet the Members"
-                                class="nav-link text-[#fafafa] hover:text-[#7cff01] transition-colors">Members</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="#About"
-                                class="nav-link text-[#fafafa] hover:text-[#7cff01] transition-colors">About</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="#Follow"
-                                class="nav-link text-[#fafafa] hover:text-[#7cff01] transition-colors">Follow</a>
-                        </li>
-                    </ul>
-                </div>
             </div>
         </div>
     </nav>
+
 
     <section class="hero-section py-20 md:py-32">
         <div class="container mx-auto px-4 text-center">
@@ -184,6 +164,7 @@
     </section>
 
 
+
     <section id="Meet the Members" class="py-16 bg-[#0f0f0f]">
         <div class="container mx-auto px-4">
             <h2 class="text-3xl font-bold mb-10 text-center" style="color: #478978;">Members</h2>
@@ -191,6 +172,7 @@
             </div>
         </div>
     </section>
+
 
     <section id="Follow">
         <footer class="bg-900 text-white py-12" style="background-color: #478978;">
@@ -210,16 +192,14 @@
                         <a href="https://open.spotify.com/artist/48eO052eSDcn8aTxiv6QaG?si=PY0gKyvlTTO4sReTPKLM8Q"
                             class="text-white-400 hover:text-[#7cff01] transition-colors w-10 h-10 flex items-center justify-center">
                             <i class="ri-spotify-fill ri-lg"></i></a>
-                        <a href="https://www.youtube.com/@nctsmtown"
-                            class="text-white-400 hover:text-[#7cff01] transition-colors w-10 h-10 flex items-center justify-center">
+                        <a href="https://www.youtube.com/@nctsmtown" class="text-white-400 hover:text-[#7cff01] transition-colors w-10 h-10 flex items-center justify-center">
                             <i class="ri-youtube-fill ri-lg"></i></a>
-                        <a href="https://www.tiktok.com/@official_nct"
-                            class="text-white-400 hover:text-[#7cff01] transition-colors w-10 h-10 flex items-center justify-center">
+                        <a href="https://www.tiktok.com/@official_nct" class="text-white-400 hover:text-[#7cff01] transition-colors w-10 h-10 flex items-center justify-center">
                             <i class="ri-tiktok-fill ri-lg"></i></a>
                     </div>
                 </div>
                 <div class="border-t border-gray-800 mt-8 pt-8 text-center text-white-400">
-                    <p>© 2025 Patricia Brin. All rights reserved.</p>
+                    <p>&copy; 2025 Patricia Brin. All rights reserved.</p>
                 </div>
             </div>
         </footer>
@@ -227,16 +207,17 @@
 
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
         <script>
-
+    
+    
             function toggleReadMore() {
                 const moreContent = document.getElementById('moreContent');
                 const readMoreText = document.getElementById('readMoreText');
                 const readMoreIcon = document.getElementById('readMoreIcon');
-
-
+    
+    
                 moreContent.classList.toggle('expanded');
-
-
+    
+    
                 if (moreContent.classList.contains('expanded')) {
                     readMoreText.textContent = 'Read Less';
                     readMoreIcon.classList.remove('ri-arrow-down-s-line');
@@ -247,7 +228,6 @@
                     readMoreIcon.classList.add('ri-arrow-down-s-line');
                 }
             }
-
             const galleryItems = [
                 {
                     id: 1,
@@ -475,70 +455,85 @@
                     imageUrl: "https://i.pinimg.com/736x/97/6b/51/976b51a39ab664498288a9c973bd3895.jpg"
                 },
             ];
-
+    
             document.addEventListener('DOMContentLoaded', function () {
-                const mobileNavToggle = document.getElementById('mobileNavToggle');
-                const mobileNav = document.getElementById('mobileNav');
-                const mobileNavOverlay = document.getElementById('mobileNavOverlay');
-                const mobileNavLinks = mobileNav.querySelectorAll('#mobileNav ul li a');
+            const galleryContainer = document.getElementById('galleryContainer');
 
-                if (mobileNavLinks.length > 0) {
-                    mobileNavLinks[0].classList.add('mobile-nav-active');
-                }
 
-                mobileNavToggle.addEventListener('click', function () {
-                    mobileNav.classList.toggle('translate-x-0');
-                    mobileNavOverlay.classList.toggle('hidden');
-                    document.body.classList.toggle('overflow-hidden');
+            galleryItems.forEach(item => {
+                const galleryItem = document.createElement('div');
+                galleryItem.className = 'gallery-item rounded shadow-md bg-white overflow-hidden';
+
+
+                galleryItem.innerHTML = `
+                    <div class="relative">
+                        <img src="${item.imageUrl}" alt="${item.Name}" class="w-full h-64 object-cover object-top">
+                        <div class="gallery-overlay">
+                            <h3 class="text-xl font-bold mb-2">${item.Name}</h3>    
+                            <p class="mb-4">${item.BirthName}</p>
+                            <button onclick="toggleDetails(${item.id})" class="bg-white text-[#00ab41] hover:bg-gray-100 px-4 py-2 rounded-button font-medium transition-colors whitespace-nowrap">
+                                View Details
+                            </button>
+                        </div>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="text-xl font-bold mb-2">${item.Name}</h3>
+                        <p class="text-gray-700 mb-4">${item.BirthName}</p>
+                        <div id="details-${item.id}" class="gallery-details">
+                            <div class="pt-4 border-t border-gray-200 mt-4">
+                                <p class="text-gray-700"><span class="font-medium">Position:</span> ${item.Position}</p>
+                                <p class="text-gray-700"><span class="font-medium">Birthday:</span> ${item.Birthday}</p>
+                                <p class="text-gray-700"><span class="font-medium">Sub-Unit:</span> ${item.SubUnit}</p>
+                                <p class="text-gray-700 mt-3">Each of these faces represents a unique and talented member of NCT,
+                                    a group known for its extraordinary diversity and boundless potential. While each member brings their own personality, skills,
+                                    and style to the group, together they form a powerhouse that transcends boundaries and constantly evolves.
+                                    From their passion for music to their unbreakable bond as a team.</p>
+                            </div>
+                        </div>
+                        <button onclick="toggleDetails(${item.id})" class="text-[#00ab41] hover:text-[#00ab41]-700 font-medium mt-2 flex items-center transition-colors whitespace-nowrap !rounded-button">
+                            <span id="detailsText-${item.id}">Show Details</span>
+                            <span class="w-5 h-5 flex items-center justify-center ml-1">
+                                <i id="detailsIcon-${item.id}" class="ri-arrow-down-s-line"></i>
+                            </span>
+                        </button>
+                    </div>
+                `;
+
+
+                galleryContainer.appendChild(galleryItem);
+
+
+                galleryItem.addEventListener('mouseover', function () {
+
+
                 });
-
-                mobileNavOverlay.addEventListener('click', function () {
-                    mobileNav.classList.remove('translate-x-0');
-                    mobileNavOverlay.classList.add('hidden');
-                    document.body.classList.remove('overflow-hidden');
-                });
-
-                mobileNavLinks.forEach(link => {
-                    link.addEventListener('click', function (event) {
-                        event.preventDefault(); // Prevent default anchor behavior
-
-                        mobileNavLinks.forEach(otherLink => {
-                            otherLink.classList.remove('mobile-nav-active');
-                        });
-                        this.classList.add('mobile-nav-active');
-
-                        mobileNav.classList.remove('translate-x-0');
-                        mobileNavOverlay.classList.add('hidden');
-                        document.body.classList.remove('overflow-hidden');
-
-                        const targetId = this.getAttribute('href');
-                        const targetElement = document.querySelector(targetId);
-
-                        if (targetElement) {
-                            targetElement.scrollIntoView({ behavior: 'smooth' });
-                        }
-                    });
-                });
-
-                function toggleDetails(id) {
-                    const details = document.getElementById(`details-${id}`);
-                    const detailsText = document.getElementById(`detailsText-${id}`);
-                    const detailsIcon = document.getElementById(`detailsIcon-${id}`);
-
-                    details.classList.toggle('expanded');
-
-                    if (details.classList.contains('expanded')) {
-                        detailsText.textContent = 'Hide Details';
-                        detailsIcon.classList.remove('ri-arrow-down-s-line');
-                        detailsIcon.classList.add('ri-arrow-up-s-line');
-                    } else {
-                        detailsText.textContent = 'Show Details';
-                        detailsIcon.classList.remove('ri-arrow-up-s-line');
-                        detailsIcon.classList.add('ri-arrow-down-s-line');
-                    }
-                }
             });
-        </script>
+        });
+
+
+
+
+        function toggleDetails(id) {
+            const details = document.getElementById(`details-${id}`);
+            const detailsText = document.getElementById(`detailsText-${id}`);
+            const detailsIcon = document.getElementById(`detailsIcon-${id}`);
+
+
+            details.classList.toggle('expanded');
+
+
+            if (details.classList.contains('expanded')) {
+                detailsText.textContent = 'Hide Details';
+                detailsIcon.classList.remove('ri-arrow-down-s-line');
+                detailsIcon.classList.add('ri-arrow-up-s-line');
+            } else {
+                detailsText.textContent = 'Show Details';
+                detailsIcon.classList.remove('ri-arrow-up-s-line');
+                detailsIcon.classList.add('ri-arrow-down-s-line');
+            }
+        }
+    </script>
 </body>
+
 
 </html>
