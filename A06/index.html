@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NCT</title>
-    <link rel="icon" href="../A04/W03.logo.png" type="icon"/>
+    <link rel="icon" href="../A04/W03.logo.png" type="icon" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
@@ -18,11 +18,28 @@
             content: "\f3c2";
         }
 
-        body {
-            font-family: 'Inter', sans-serif;
-            color: #333;
+        body[data-bs-theme="light"] #About,
+        body[data-bs-theme="light"] #Meet\ the\ Members,
+        body[data-bs-theme="light"] #moreContent {
             background-color: #fafafa;
-            min-height: 100vh;
+            color: #222;
+
+        }
+
+        body[data-bs-theme="dark"] #About,
+        body[data-bs-theme="dark"] #Meet\ the\ Members,
+        body[data-bs-theme="dark"] #moreContent {
+            background-color: #0f0f0f;
+            color: #f1eee2;
+
+        }
+
+        body,
+        #About,
+        #Meet\ the\ Members,
+        #moreContent,
+        #colorBtn {
+            transition: background-color 0.5s ease, color 0.5s ease;
         }
 
         .gallery-item {
@@ -76,26 +93,23 @@
 </head>
 
 <body>
-    <nav class="bg-[#478978] shadow-sm py-4">
-        <div class="container mx-auto px-4 flex justify-between items-center">
-            <a href="#" class="text-4xl font-['Impact']" style="color:white;">nct</a>
+    <nav class="bg-[#478978] navbar navbar-expand-lg bg-success text-white px-4 py-3">
+        <a class="navbar-brand text-white fw-bold fs-2" href="#">nct</a>
 
 
-            <div class="hidden md:flex space-x-8">
-                <a href="../index.html" class="text-[#fafafa] hover:text-[#7cff01] transition-colors">Back to
-                    Portfolio</a>
-                <a href="#Meet the Members" class="text-[#fafafa] hover:text-[#7cff01] transition-colors">Members</a>
-                <a href="#About" class="text-[#fafafa] hover:text-[#7cff01] transition-colors">About</a>
-                <a href="#Follow" class="text-[#fafafa] hover:text-[#7cff01] transition-colors">Follow</a>
-            </div>
+        <div class="d-flex ms-auto align-items-center space-x-4">
+            <a href="../index.html" class="text-[#fafafa] hover:text-[#7cff01] transition-colors">Back to
+                Portfolio</a>
+            <a href="#Meet the Members" class="text-[#fafafa] hover:text-[#7cff01] transition-colors">Members</a>
+            <a href="#About" class="text-[#fafafa] hover:text-[#7cff01] transition-colors">About</a>
+            <a href="#Follow" class="text-[#fafafa] hover:text-[#7cff01] transition-colors">Follow</a>
+        </div>
+        <button id="colorBtn" onclick="changeMode()"
+            class="transition-colors duration-500 ms-4 px-3 py-2 btn btn-light">
+            Dark Mode
+        </button>
 
-
-            <div class="md:hidden">
-                <button
-                    class="text-gray-700 hover:text-primary transition-colors w-10 h-10 flex items-center justify-center">
-                    <i class="ri-menu-line ri-lg"></i>
-                </button>
-            </div>
+        </div>
         </div>
     </nav>
 
@@ -109,47 +123,50 @@
         </div>
     </section>
 
-    <section id="About" class="py-16 bg-[#0f0f0f]">
+    <section id="About" class="py-16 transition-colors duration-500">
         <div class="container mx-auto px-4">
-            <div class="max-w-3xl mx-auto">
-                <h2 class="text-3xl font-bold mb-6 text-center" style="color: #478978;">About NCT</h2>
+            <div class="max-w-3xl mx-auto text-base transition-colors">
+                <h2 class="text-3xl font-bold mb-6 text-center text-[#478978]">About NCT</h2>
                 <div class="mb-6">
-                    <p class="text-gray-700 mb-4" style="color: #e5e3dd;"><b>NCT</b> (엔시티), an acronym for ‘<b>N</b>eo
-                        <b>C</b>ulture
-                        <b>T</b>echnology’, is a 25 member boy group under SM Entertainment.
+                    <p class="mb-4">
+                        <b>NCT</b> (엔시티), an acronym for ‘<b>N</b>eo <b>C</b>ulture <b>T</b>echnology’, is a 25 member
+                        boy group under SM Entertainment.
                         Introduced in January 2016, the group consists of 25 members divided into six different
-                        sub-units: <b>NCT U</b>, <b>NCT 127</b>,
-                        <b>NCT Dream</b>, <b>WayV</b>, <b>NCT DoJaeJung</b>, and <b>NCT Wish</b>. They are known for
-                        their versatility in music, vocal and rap abilities, and powerful
-                        performances, and have been cited as K-pop's "most experimental boy band" due to their concept
-                        of having limitless members. As of June 2024, NCT has recorded more than 45 million album sales
-                        in Korea across all
-                        sub-units, making them the best-selling K-pop artist of all time.
+                        sub-units:
+                        <b>NCT U</b>, <b>NCT 127</b>, <b>NCT Dream</b>, <b>WayV</b>, <b>NCT DoJaeJung</b>, and <b>NCT
+                            Wish</b>. They are known for
+                        their versatility in music, vocal and rap abilities, and powerful performances, and have been
+                        cited as K-pop's
+                        "most experimental boy band" due to their concept of having limitless members. As of June 2024,
+                        NCT has
+                        recorded more than 45 million album sales in Korea across all sub-units, making them the
+                        best-selling
+                        K-pop artist of all time.
                     </p>
-                    <div id="moreContent" class="gallery-details">
-                        <p class="text-gray-700 mb-4" style="color: #e5e3dd;">They are described as having an unlimited
-                            number of members and
-                            sub-units until late 2023 where it was announced
-                            that NCT Wish would be the last sub-unit of NCT,
-                            and no more members would be joining.</p>
-                        <p class="text-gray-700 mb-4" style="color: #e5e3dd;">The group consists of members
-                            <b>Taeyong</b>, <b>Johnny</b>,
-                            <b>Yuta</b>, <b>Kun</b>,
-                            <b>Doyoung</b>, <b>Ten</b>, <b>Jaehyun</b>, <b>Winwin</b>, <b>Jungwoo</b>, <b>Mark</b>,
-                            <b>Xiaojun</b>, <b>Hendery</b>,
-                            <b>Renjun</b>, <b>Jeno</b>, <b>Haechan</b>, <b>Jaemin</b>, <b>Yangyang</b>, <b>Chenle</b>,
-                            <b>Jisung</b>, <b>Sion</b>, <b>Riku</b>, <b>Yushi</b>, <b>Jaehee</b>, <b>Ryo</b> and
-                            <b>Sakuya</b>.
+
+                    <div id="moreContent" class="gallery-details transition-colors duration-500">
+                        <p class="mb-4">
+                            They are described as having an unlimited number of members and sub-units until late 2023
+                            where it was announced
+                            that NCT Wish would be the last sub-unit of NCT, and no more members would be joining.
                         </p>
-                        <p class="text-gray-700 mb-4" style="color: #e5e3dd;">On May 10, 2023, SM Entertainment
-                            announced that <b>Lucas</b> had left
-                            the group and his sub-units
+                        <p class="mb-4">
+                            The group consists of members <b>Taeyong</b>, <b>Johnny</b>, <b>Yuta</b>, <b>Kun</b>,
+                            <b>Doyoung</b>, <b>Ten</b>, <b>Jaehyun</b>, <b>Winwin</b>, <b>Jungwoo</b>, <b>Mark</b>,
+                            <b>Xiaojun</b>, <b>Hendery</b>, <b>Renjun</b>, <b>Jeno</b>, <b>Haechan</b>, <b>Jaemin</b>,
+                            <b>Yangyang</b>, <b>Chenle</b>, <b>Jisung</b>, <b>Sion</b>, <b>Riku</b>, <b>Yushi</b>,
+                            <b>Jaehee</b>, <b>Ryo</b>, and <b>Sakuya</b>.
+                        </p>
+                        <p class="mb-4">
+                            On May 10, 2023, SM Entertainment announced that <b>Lucas</b> had left the group and his
+                            sub-units
                             but is still under SM. On May 24, 2023, SM Entertainment announced that <b>Shotaro</b> and
-                            <b>Sungchan</b>
-                            will be leaving NCT and their sub-units and debut in SM’s new boy group <b>RIIZE</b>.
+                            <b>Sungchan</b> will be leaving NCT and their sub-units and debut in SM’s new boy group
+                            <b>RIIZE</b>.
                         </p>
                     </div>
                 </div>
+
                 <div class="text-center">
                     <button id="readMoreBtn" onclick="toggleReadMore()"
                         class="text-[#00ab41] hover:text-[#00ab41]-700 font-medium flex items-center mx-auto transition-colors whitespace-nowrap !rounded-button">
@@ -163,9 +180,7 @@
         </div>
     </section>
 
-
-
-    <section id="Meet the Members" class="py-16 bg-[#0f0f0f]">
+    <section id="Meet the Members" class="py-16 transition-colors duration-500">
         <div class="container mx-auto px-4">
             <h2 class="text-3xl font-bold mb-10 text-center" style="color: #478978;">Members</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8" id="galleryContainer">
@@ -192,9 +207,11 @@
                         <a href="https://open.spotify.com/artist/48eO052eSDcn8aTxiv6QaG?si=PY0gKyvlTTO4sReTPKLM8Q"
                             class="text-white-400 hover:text-[#7cff01] transition-colors w-10 h-10 flex items-center justify-center">
                             <i class="ri-spotify-fill ri-lg"></i></a>
-                        <a href="https://www.youtube.com/@nctsmtown" class="text-white-400 hover:text-[#7cff01] transition-colors w-10 h-10 flex items-center justify-center">
+                        <a href="https://www.youtube.com/@nctsmtown"
+                            class="text-white-400 hover:text-[#7cff01] transition-colors w-10 h-10 flex items-center justify-center">
                             <i class="ri-youtube-fill ri-lg"></i></a>
-                        <a href="https://www.tiktok.com/@official_nct" class="text-white-400 hover:text-[#7cff01] transition-colors w-10 h-10 flex items-center justify-center">
+                        <a href="https://www.tiktok.com/@official_nct"
+                            class="text-white-400 hover:text-[#7cff01] transition-colors w-10 h-10 flex items-center justify-center">
                             <i class="ri-tiktok-fill ri-lg"></i></a>
                     </div>
                 </div>
@@ -204,20 +221,32 @@
             </div>
         </footer>
 
+        <script>
+            var mode = "dark";
+            function changeMode() {
+                var colorBtn = document.getElementById("colorBtn");
+                mode = (mode == "light") ? "dark" : "light";
 
+                colorBtn.innerHTML = (mode == "dark") ? "Light Mode" : "Dark Mode";
+
+                colorBtn.classList.remove("btn-light", "btn-dark");
+                colorBtn.classList.add(mode == "dark" ? "btn-light" : "btn-dark");
+                document.body.setAttribute("data-bs-theme", mode);
+            }
+        </script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
         <script>
-    
-    
+
+
             function toggleReadMore() {
                 const moreContent = document.getElementById('moreContent');
                 const readMoreText = document.getElementById('readMoreText');
                 const readMoreIcon = document.getElementById('readMoreIcon');
-    
-    
+
+
                 moreContent.classList.toggle('expanded');
-    
-    
+
+
                 if (moreContent.classList.contains('expanded')) {
                     readMoreText.textContent = 'Read Less';
                     readMoreIcon.classList.remove('ri-arrow-down-s-line');
@@ -455,21 +484,21 @@
                     imageUrl: "https://i.pinimg.com/736x/97/6b/51/976b51a39ab664498288a9c973bd3895.jpg"
                 },
             ];
-    
+
             document.addEventListener('DOMContentLoaded', function () {
-            const galleryContainer = document.getElementById('galleryContainer');
+                const galleryContainer = document.getElementById('galleryContainer');
 
 
-            galleryItems.forEach(item => {
-                const galleryItem = document.createElement('div');
-                galleryItem.className = 'gallery-item rounded shadow-md bg-white overflow-hidden';
+                galleryItems.forEach(item => {
+                    const galleryItem = document.createElement('div');
+                    galleryItem.className = 'gallery-item rounded shadow-md bg-white overflow-hidden';
 
 
-                galleryItem.innerHTML = `
+                    galleryItem.innerHTML = `
                     <div class="relative">
                         <img src="${item.imageUrl}" alt="${item.Name}" class="w-full h-64 object-cover object-top">
                         <div class="gallery-overlay">
-                            <h3 class="text-xl font-bold mb-2">${item.Name}</h3>    
+                            <h3 class="text-xl font-bold mb-2"  style="color: black;">${item.Name}</h3>    
                             <p class="mb-4">${item.BirthName}</p>
                             <button onclick="toggleDetails(${item.id})" class="bg-white text-[#00ab41] hover:bg-gray-100 px-4 py-2 rounded-button font-medium transition-colors whitespace-nowrap">
                                 View Details
@@ -477,7 +506,7 @@
                         </div>
                     </div>
                     <div class="p-4">
-                        <h3 class="text-xl font-bold mb-2">${item.Name}</h3>
+                        <h3 class="text-xl font-bold mb-2"  style="color: black;">${item.Name}</h3>
                         <p class="text-gray-700 mb-4">${item.BirthName}</p>
                         <div id="details-${item.id}" class="gallery-details">
                             <div class="pt-4 border-t border-gray-200 mt-4">
@@ -500,39 +529,36 @@
                 `;
 
 
-                galleryContainer.appendChild(galleryItem);
+                    galleryContainer.appendChild(galleryItem);
 
 
-                galleryItem.addEventListener('mouseover', function () {
+                    galleryItem.addEventListener('mouseover', function () {
 
 
+                    });
                 });
             });
-        });
+
+            function toggleDetails(id) {
+                const details = document.getElementById(`details-${id}`);
+                const detailsText = document.getElementById(`detailsText-${id}`);
+                const detailsIcon = document.getElementById(`detailsIcon-${id}`);
 
 
+                details.classList.toggle('expanded');
 
 
-        function toggleDetails(id) {
-            const details = document.getElementById(`details-${id}`);
-            const detailsText = document.getElementById(`detailsText-${id}`);
-            const detailsIcon = document.getElementById(`detailsIcon-${id}`);
-
-
-            details.classList.toggle('expanded');
-
-
-            if (details.classList.contains('expanded')) {
-                detailsText.textContent = 'Hide Details';
-                detailsIcon.classList.remove('ri-arrow-down-s-line');
-                detailsIcon.classList.add('ri-arrow-up-s-line');
-            } else {
-                detailsText.textContent = 'Show Details';
-                detailsIcon.classList.remove('ri-arrow-up-s-line');
-                detailsIcon.classList.add('ri-arrow-down-s-line');
+                if (details.classList.contains('expanded')) {
+                    detailsText.textContent = 'Hide Details';
+                    detailsIcon.classList.remove('ri-arrow-down-s-line');
+                    detailsIcon.classList.add('ri-arrow-up-s-line');
+                } else {
+                    detailsText.textContent = 'Show Details';
+                    detailsIcon.classList.remove('ri-arrow-up-s-line');
+                    detailsIcon.classList.add('ri-arrow-down-s-line');
+                }
             }
-        }
-    </script>
+        </script>
 </body>
 
 
