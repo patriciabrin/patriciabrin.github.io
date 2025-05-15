@@ -291,7 +291,7 @@
     function toggleReadMore() {
       const moreText = document.getElementById("moreAbout");
       const btn = event.target;
-      if (moreText.style.display === "none" || moreText.style.display === "") {
+      if (moreText.style.display == "none" || moreText.style.display == "") {
         moreText.style.display = "block";
         btn.textContent = "Read Less";
       } else {
