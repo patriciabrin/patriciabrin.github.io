@@ -15,33 +15,31 @@
       background-color: #f8f9fa;
     }
 
-    .navbar {
-      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    /* Glassmorphism effect for navbar and footer */
+    .navbar, footer {
+      background: rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    }
+
+    .navbar-dark .navbar-nav .nav-link {
+      color: #fff;
+    }
+
+    .navbar-dark .navbar-nav .nav-link:hover {
+      color: #cce4ff;
+    }
+
+    footer {
+      color: #f1f1f1;
     }
 
     #about {
       background: linear-gradient(to right, #fefefe, #f1f1f1);
       padding: 80px 20px;
-      text-align: center;
       border-bottom: 1px solid #ddd;
-    }
-
-    #about img {
-      border-radius: 50%;
-      border: 1px solid #0a1a2b;
-      max-width: 180px;
-      margin-bottom: 20px;
-    }
-
-    #about h1 {
-      font-weight: 700;
-      color: #333;
-    }
-
-    #about p {
-      color: #555;
-      max-width: 700px;
-      margin: 0 auto 10px;
     }
 
     #projects {
@@ -83,7 +81,6 @@
       padding: 8px 20px;
     }
 
-    /* Contact */
     #contact {
       background-color: #f0f4f8;
       padding: 60px 20px;
@@ -108,13 +105,16 @@
       color: #007bff;
     }
 
-    footer {
-      background-color: #212529;
-      color: #bbb;
-    }
+    /* Responsive about section */
+    @media (max-width: 768px) {
+      #about .container {
+        flex-direction: column !important;
+        text-align: center !important;
+      }
 
-    footer p {
-      margin: 0;
+      #about .container div {
+        max-width: 100% !important;
+      }
     }
   </style>
 </head>
@@ -140,16 +140,26 @@
     </div>
   </nav>
 
+  <!-- Updated About Section -->
   <section id="about" class="pt-5 mt-5">
-    <div class="container">
-      <img src="../A04/patricia.png" alt="Your Profile Picture" class="img-fluid"/>
-      <h1>Hello, I'm Patricia Brin</h1>
+    <div class="container d-flex flex-wrap align-items-center justify-content-center gap-5 text-start">
+      <div class="text-center">
+        <img src="../A04/patricia.png" alt="Patricia Brin" class="img-fluid mb-3" style="max-width: 180px; border-radius: 50%; border: 1px solid #0a1a2b;" />
+        <h1 class="fw-bold">Patricia Brin</h1>
+      </div>
+      <div style="max-width: 500px;">
+        <h2 class="fw-semibold">About Me</h2>
+        <p>
+          I'm a second-year student at the Polytechnic University of the Philippines - Sto. Tomas, currently taking a Diploma in Information Management. I enjoy building user-friendly web pages and exploring creative design techniques using HTML, CSS, and JavaScript. Passionate about tech, learning, and continuous improvement.
+        </p>
+      </div>
     </div>
   </section>
 
   <section id="projects" class="container">
     <h2>My Projects</h2>
     <div class="row">
+      <!-- All project cards go here -->
       <div class="col-lg-4 col-md-6">
         <div class="card shadow-sm mb-4">
           <img src="https://i.pinimg.com/736x/49/8b/b9/498bb9add8d3bef02023cc65f8b76b4c.jpg" class="card-img-top" alt="Activity 4" />
@@ -160,6 +170,7 @@
           </div>
         </div>
       </div>
+
       <div class="col-lg-4 col-md-6">
         <div class="card shadow-sm mb-4">
           <img src="https://i.pinimg.com/736x/8b/49/51/8b49510d8e254c10fc2ea966dd88595e.jpg" class="card-img-top" alt="Activity 5" />
@@ -170,6 +181,7 @@
           </div>
         </div>
       </div>
+
       <div class="col-lg-4 col-md-6">
         <div class="card shadow-sm mb-4">
           <img src="https://i.pinimg.com/736x/ec/0a/a8/ec0aa8aa61d9a56e10453bc5b64e36b9.jpg" class="card-img-top" alt="Activity 6" />
@@ -180,6 +192,7 @@
           </div>
         </div>
       </div>
+
       <div class="col-lg-4 col-md-6">
         <div class="card shadow-sm mb-4">
           <img src="https://i.pinimg.com/736x/cb/ac/02/cbac022d42b1f0d2308b8ac2ff2170f0.jpg" class="card-img-top" alt="Activity 7" />
@@ -187,6 +200,17 @@
             <h5 class="card-title">Activity 07</h5>
             <p class="card-text">An HTML website that utilizes a free public API with JSON return. It can be about anything. It can have one or more pages.</p>
             <a href="A07/index.html" class="btn btn-primary">See Project</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-4 col-md-6">
+        <div class="card shadow-sm mb-4">
+          <img src="https://i.pinimg.com/736x/f0/dd/e3/f0dde3d3b323b50dea265927839111c0.jpg" class="card-img-top" alt="Activity 8" />
+          <div class="card-body">
+            <h5 class="card-title">Activity 08</h5>
+            <p class="card-text">An HTML design that implements the Parallax design.</p>
+            <a href="A08/index.html" class="btn btn-primary">See Project</a>
           </div>
         </div>
       </div>
@@ -202,7 +226,7 @@
     </div>
   </section>
 
-  <footer class="bg-dark text-center py-3">
+  <footer class="text-center py-3">
     <p>&copy; 2025 Patricia Brin. All rights reserved.</p>
   </footer>
 
